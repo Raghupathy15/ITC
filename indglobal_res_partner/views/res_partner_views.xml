@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="res_part_inherit_form" model="ir.ui.view">
+		<field name="name">res.partner.form</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='type']" position="before">
+				<field name="customer_id"/>
+				<field name="forum_code"/>
+			</xpath>
+			<xpath expr="//field[@name='vat']" position="after">
+				<field name="tin"/>
+				<field name="beat"/>
+				<field name="track_points"/>
+				<field name="collected_points"/>
+				<field name="zone"/>
+				<field name="pop_group"/>
+			</xpath>
+			<xpath expr="//field[@name='category_id']" position="after">
+				<field name="channel_type_id"/>
+				<field name="dl_20"/>
+				<field name="dl_21"/>
+				<field name="rcs_id"/>
+				<field name="fssai_no"/>
+				<field name="trade_customer"/>
+				<field name="market_district"/>
+				<field name="sub_district"/>
+			</xpath>
+			
+			<!-- <xpath expr="//page[3]" position='after'>
+				<page string="Return Policy">
+					<group>
+						<group>
+							<field name="return_policy"/>
+						</group>
+						<group>
+							<field name="terms_and_conditions"/>
+						</group>
+					</group>
+				</page>
+			</xpath> -->
+
+		</field>
+	</record>
+</odoo>

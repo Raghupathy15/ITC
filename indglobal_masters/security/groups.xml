@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="res.groups" id="group_menu_invisible">
+        <field name="name">Menu Invisible</field>
+    </record>
+    <record model="res.groups" id="group_menu_approver">
+        <field name="name">Approver</field>
+    </record>
+
+    <record model="res.groups" id="group_menu_users">
+        <field name="name">User</field>
+    </record>
+</odoo>

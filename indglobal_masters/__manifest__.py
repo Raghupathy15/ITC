@@ -1,0 +1,20 @@
+{
+    'name' : 'Indglobal Masters',
+    'version' : '1.1',
+	'author' : 'Indglobal digital private limited',
+    'summary': 'Adding new Mastesr',
+    'sequence': 1,
+    'description': """Adding new masters""",
+    'category' : 'base',
+    'website': 'https://www.indglobal.com',
+    'depends' : ['base','contacts'],
+    'data': [
+            'views/channel_type_views.xml',
+            'security/ir.model.access.csv',
+            'security/groups.xml',
+            ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'license': 'OEEL-1',
+}

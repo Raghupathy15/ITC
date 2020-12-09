@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_purchase_extend_form" model="ir.ui.view">
+            <field name="name">purchase.extend.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="od_number"/>
+                    <field name="batch"/>
+                </xpath>
+                <xpath expr="//field[@name='date_planned']" position="after">
+                    <field name="hsn_code"/>
+                </xpath>
+                                <xpath expr="//field[@name='product_uom']" position="replace">
+
+                <field name="product_uom" string="UoM" groups="uom.group_uom" attrs="{'readonly': [('state', 'in', ('purchase', 'done', 'cancel'))]}" force_save="1" optional="show"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

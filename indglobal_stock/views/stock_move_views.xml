@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<!--Assign lot numbers button view-->
+        <record id="stock_move_line_inherit_view_form" model="ir.ui.view">
+            <field name="name">stock.move.inherit.form.view</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_stock_move_operations"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group" position="inside">
+                    <field name="display_assign_lot" invisible="0"/>
+                    <label for="button_create_lots" string="Assign Lot Numbers" attrs="{'invisible': [('display_assign_lot', '=', False)]}"/>
+                    <div class="o_row">
+                        <button name="button_create_lots" class="btn-primary" type="object" string="Assign Lot Numbers"
+                                attrs="{'invisible': [('display_assign_lot', '=', False)]}" />
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

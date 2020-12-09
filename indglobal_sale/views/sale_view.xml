@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--sale order form view-->
+	<record id="view_order_form_inherited" model="ir.ui.view">
+		<field name="name">sale.order.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='payment_term_id']" position="after">
+				<field name="doc_ref"/>
+				<field name="forum_code"/>                
+			</xpath>
+			<xpath expr="//page[@name='customer_signature']" position='after'>
+				<page string='Approver Signature'>
+					<label for="digital_signature" string="Approver Signature" class="oe_edit_only" />
+					<h2>
+						<field name="digital_signature" widget="signature"/>
+					</h2>        
+				</page>
+			</xpath>
+		</field>
+	</record>
+	
+	<record id="view_order_form_inherited_group" model="ir.ui.view">
+		<field name="name">sale.order.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form" />
+		<field name="groups_id" eval="[(6, 0, [ref('indglobal_masters.group_menu_users') ])]" />                
+		<field name="arch" type="xml">                                   
+			<field name="digital_signature" position="attributes">
+			   <attribute name="readonly">1</attribute>                   
+			</field>                              
+		</field>
+	</record>  
+</odoo>
